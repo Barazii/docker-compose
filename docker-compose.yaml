@@ -8,6 +8,8 @@ services:
       - "8000:8000"
     networks:
       - dcompose
+    environment:
+      - API_URL=http://backend:3000/api/items
 
   backend:
     build: ./backend

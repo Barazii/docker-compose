@@ -1,11 +1,12 @@
 # frontend/app.py
 from flask import Flask, render_template
 import requests
+import os
 
 app = Flask(__name__)
 
 # Define the backend API URL
-API_URL = "http://backend:3000/api/items"
+API_URL = os.environ["API_URL"]
 
 
 @app.route("/")
