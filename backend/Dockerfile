@@ -1,21 +1,20 @@
-# Use the official Node.js image as the base image
-FROM node:14-alpine
+# Use the official Python image from the Docker Hub
+FROM python:3.9-slim
 
 # Set the working directory in the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json files
-COPY package*.json ./
+# Copy the requirements file into the container
+COPY requirements.txt .
 
-# Install dependencies
-RUN npm install
+# Install the dependencies
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
-COPY . .
+COPY backend.py .
 
-# Expose the port on which the Node.js app will run
-EXPOSE 3000
+# Expose the port the app runs on
+EXPOSE 8080
 
-# Command to run the Node.js application
-CMD ["node", "server.js"]
-
+# Define the command to run the application
+CMD ["python", "backend.py"]

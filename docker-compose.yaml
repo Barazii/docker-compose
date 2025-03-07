@@ -5,17 +5,17 @@ services:
     build: ./frontend
     image: tfrontend
     ports:
-      - "8000:8000"
+      - "80:80"
     networks:
       - dcompose
     environment:
-      - API_URL=http://backend:3000/api/items
+      - API_URL=http://backend:8080/api/items
 
   backend:
     build: ./backend
     image: tbackend
     ports:
-      - "3000:3000"
+      - "8080:8080"
     networks:
       - dcompose
 
