@@ -3,6 +3,7 @@ version: '3.8'
 services:
   frontend:
     build: ./frontend
+    image: tfrontend
     ports:
       - "8000:8000"
     networks:
@@ -10,6 +11,7 @@ services:
 
   backend:
     build: ./backend
+    image: tbackend
     ports:
       - "3000:3000"
     networks:
