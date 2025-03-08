@@ -2,8 +2,8 @@ AWS_REGION := eu-north-1
 AWS_ACCOUNT_ID := 482497089777
 ECR_URL := $(AWS_ACCOUNT_ID).dkr.ecr.$(AWS_REGION).amazonaws.com
 
-IMAGE1 := tbackend
-IMAGE2 := tfrontend
+IMAGE1 := backend
+IMAGE2 := frontend
 
 .PHONY: build push login create
 

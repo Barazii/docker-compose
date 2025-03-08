@@ -3,17 +3,17 @@ version: '3.8'
 services:
   frontend:
     build: ./frontend
-    image: tfrontend
+    image: frontend
     ports:
       - "80:80"
     networks:
       - dcompose
     environment:
-      - API_URL=http://backend:8080/api/items
+      - API_URL=http://backend:8080
 
   backend:
     build: ./backend
-    image: tbackend
+    image: backend
     ports:
       - "8080:8080"
     networks:
